@@ -11,10 +11,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const modelsDirectory = path.join(__dirname, "..", "models");
 
 const llama = await getLlama();
-const modelName =
-    "hf:mradermacher/Llama-3.2-3B-Instruct-GGUF/Llama-3.2-3B-Instruct.Q8_0.gguf";
+
 console.log(chalk.yellow("Resolving model file..."));
-const modelPath = await resolveModelFile(modelName, modelsDirectory);
+const modelPath = await resolveModelFile(
+    "Llama-Deepsync-1B.Q4_K_M.gguf",
+    modelsDirectory
+);
 
 console.log(chalk.yellow("Loading model..."));
 const model = await llama.loadModel({ modelPath });
