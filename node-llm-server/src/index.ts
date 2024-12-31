@@ -25,7 +25,7 @@ const context = await model.createContext();
 const session = new LlamaChatSession({
     contextSequence: context.getSequence(),
     systemPrompt:
-        "Bạn là một trợ lý AI. Hãy trả lời tất cả các câu hỏi bằng tiếng Việt. ",
+        "Bạn là một trợ lý AI. Hãy trả lời tất cả các câu hỏi bằng tiếng Việt.",
 });
 
 const PORT = process.env.PORT || 6969;
