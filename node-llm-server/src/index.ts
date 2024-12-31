@@ -33,6 +33,10 @@ app.listen(PORT, () => {
     console.log(chalk.yellow(`Server started on port ${PORT}`));
 });
 
+app.get("/ping", (req, res) => {
+    res.status(200).send("pong");
+});
+
 app.post("/chat", async (req, res) => {
     const { message } = req.body;
     console.log(chalk.green(`User: ${message}`));
